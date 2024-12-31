@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "Laptop";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    /* Header styles */
+        .header {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url("/wwwroot/images/PCLaptop/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Added shadow below the header */
+        }
+
+    .header-title {
+      font-size: clamp(24px, 5vw, 48px);
+      white-space: nowrap;
+      line-height: 1.2;
+      color: #f0f0f0;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .header-subtitle {
+      font-size: clamp(14px, 3vw, 20px);
+    }
+
+    /* Button hover effect */
+    .explore-btn {
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: #ffbf00; /* Original yellow color from previous code */
+      color: #000; /* Text color changes to black */
+      transform: translateY(-3px); /* Subtle lift effect */
+    }
+
+    @@media (max-width: 768px) {
+      .header {
+        height: 200px;
+      }
+    }
+
+    /* Updated card styles */
+    .category-card {
+      background-color: #C0C0C0; /* New card background color */
+    }
+
+    .category-card:hover {
+      background-color: #999999; /* Darker shade on hover */
+    }
+    </style>
+</head>
+<body style="background-color: #FAF9F6;" class="text-white">
+
+    <br /><br /><br />
+
+    <!-- Header -->
+    <header class="header p-8">
+        <h1 class="header-title font-bold">Explore Your Perfect Laptop</h1>
+        <p class="header-subtitle text-gray-400 mt-4">Choose from Gaming, Business, or Budget laptops</p>
+    </header>
+
+    <!-- Laptop Categories -->
+    <section class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+        <!-- Gaming Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Gaming.jpg" alt="Gaming Laptop" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 style="color: #000;" class="text-2xl font-semibold">Gaming Laptops</h2>
+                <p class="text-gray-700 mt-2 flex-grow">Powerful laptops designed for gaming enthusiasts. These laptops are equipped with high-performance CPUs, dedicated GPUs, and optimized cooling systems to run the latest games smoothly.</p>
+                @Html.ActionLink("Explore", "LaptopList", "PCLaptop", new { type = "gaming" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+
+        <!-- Business Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Business.png" alt="Business Laptop" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 style="color: #000;" class="text-2xl font-semibold">Business Laptops</h2>
+                <p class="text-gray-700 mt-2 flex-grow">Efficient laptops for professionals and business use. These laptops focus on portability, battery life, and security, providing features that keep your data safe and your productivity high.</p>
+                @Html.ActionLink("Explore", "LaptopList", "PCLaptop", new { type = "business" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+
+        <!-- Budget Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Budget.jpg" alt="Budget Laptop" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 style="color: #000;" class="text-2xl font-semibold">Budget Laptops</h2>
+                <p class="text-gray-700 mt-2 flex-grow">Affordable laptops that meet everyday needs. Budget laptops offer good performance for everyday tasks such as browsing, streaming, and document editing, all at an affordable price.</p>
+                @Html.ActionLink("Explore", "LaptopList", "PCLaptop", new { type = "budget" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

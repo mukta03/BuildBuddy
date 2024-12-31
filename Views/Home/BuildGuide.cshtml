@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "BuildGuide";
+    ViewBag.HideFooter = true;
+}
+
+<br />
+<br />
+<br />
+<br />
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Pane Layout with Tips and Images</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-pane {
+            width: 12%;
+            height: 210%;
+            background-color: #c0c0c0;
+            padding: 20px;
+            border-right: 2px solid#c0c0c0;
+        }
+
+            .left-pane img {
+                background-color: #c0c0c0;
+                border: 100px;
+                width: 100px;
+            }
+
+            .left-pane h2 {
+                margin-bottom: 20px;
+                color: #000000;
+            }
+
+            .left-pane ul {
+                list-style: none;
+            }
+
+                .left-pane ul li {
+                    margin-bottom: 0px;
+                    height: fit-content;
+                }
+
+        .right-pane {
+            width: 95%;
+            height: 210%;
+            padding: 25px 0px 0px 0px; /* Remove padding to eliminate extra space */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns the images to the top */
+            background-color: #c0c0c0;
+        }
+
+        .image-grid {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 6fr);
+            grid-gap: 10px;
+            width: 100%;
+        }
+
+        .row {
+            display: contents;
+        }
+
+        .image {
+            background-color: #ccc;
+            margin: 0; /* Remove margin to reduce extra space */
+        }
+
+            .image.small {
+                height: 230px;
+                width: 100%;
+            }
+
+            .image.large {
+                grid-column: span 2;
+                height: 300px;
+                width: 100%;
+            }
+
+        .left-pane button {
+            background-color: #c0c0c0;
+            border: none;
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 30px 5px 25px;
+            padding: 3px;
+            cursor: pointer;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left pane for tips -->
+        <div class="left-pane">
+            <h2>𝙏𝙞𝙥𝙨:-</h2>
+            <ul>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__1_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__2_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__3_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__4_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner-removebg-preview (1).png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__1_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__2_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__3_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+                <li><a href="#"><img src="~/wwwroot/images/BuildGuide/Purple_Modern_Gaming_Youtube_Banner__4_-removebg-preview.png" alt=""></a></li>
+                <button class="button">ᑕᒪIᑕK</button>
+            </ul>
+        </div>
+
+        <!-- Right pane for images -->
+        <div class="right-pane">
+            <div class="image-grid">
+                <!-- First row with 3 images -->
+                <div class="row">
+                    <iframe class="image small" src="https://www.youtube.com/embed/iFFdGiMUZg8" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/Mho0M1Ns0Rw" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/UFO_zOqXKYs" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Middle row with 1 large image and 1 small image -->
+                <div class="row">
+                    <iframe class="image large" src="https://www.youtube.com/embed/FLrX9aRkZQg" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/beW8pCezrdI" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Third row with 1 small image and 1 large image -->
+                <div class="row">
+                    <iframe class="image small" src="https://www.youtube.com/embed/hk6yyl6e354" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image large" src="https://www.youtube.com/embed/PXaLc9AYIcg" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image large" src="https://www.youtube.com/embed/yw02dHyP0K0" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="row">
+                    <iframe class="image small" src="https://www.youtube.com/embed/iFFdGiMUZg8" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/iFFdGiMUZg8" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/iFFdGiMUZg8" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="image small" src="https://www.youtube.com/embed/iFFdGiMUZg8" title="PC Building Guide 2021 | How to Build a Budget Gaming PC in HINDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

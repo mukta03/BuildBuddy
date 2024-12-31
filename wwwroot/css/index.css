@@ -1,0 +1,938 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    font-family: "Poppins", serif;
+}
+
+p {
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding-top: 5vw;
+    padding-bottom: 2vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    margin-top: 70px;
+    height: 30vw;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+    .wrapper .container {
+        height: 30vw;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+
+.slideshow {
+    height: 30vw;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+    .slideshow .slideshow-left {
+        width: 40%;
+        float: left;
+        position: relative;
+        height: 100%;
+    }
+
+        .slideshow .slideshow-left .Lslide {
+            height: 30.1vw;
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0px;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+    .slideshow .Lslide-content {
+        text-align: left;
+        padding-left: 3vw;
+        position: absolute;
+        width: 100%;
+        height: 20vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+
+        .slideshow .Lslide-content h2 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 4.5vw;
+            line-height: 1.1;
+        }
+
+        .slideshow .Lslide-content p {
+            font-size: 1.5vw;
+            color: #fff;
+            padding: 1em 0em;
+        }
+
+        .slideshow .Lslide-content .button {
+            background-color: #fff;
+            display: inline-block;
+            border-radius: 25px;
+            position: relative;
+        }
+
+            .slideshow .Lslide-content .button i {
+                float: right;
+                position: absolute;
+                top: 50%;
+                right: 2.5em;
+                color: #000;
+                font-size: 0.8vw;
+                transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                transition: all 0.3s;
+            }
+
+            .slideshow .Lslide-content .button:hover i {
+                right: 1.7em;
+            }
+
+            .slideshow .Lslide-content .button p {
+                margin: 0;
+                padding: 0;
+                color: #000;
+                text-align: left;
+                padding: 0.8em 8em 0.8em 1.5em;
+                font-size: 0.8vw;
+                font-weight: 600;
+            }
+
+    .slideshow .slideshow-right {
+        width: 60%;
+        float: left;
+        position: relative;
+        height: 40vw;
+    }
+
+        .slideshow .slideshow-right .Rslide {
+            height: 40vw;
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0px;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+            .slideshow .slideshow-right .Rslide img {
+                width: 100%;
+                height: 30.1vw;
+            }
+
+.control {
+    position: relative;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+    .control i {
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        text-align: center;
+        position: absolute;
+        color: #aaaaaa;
+        transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+    }
+
+    .control .control-top {
+        width: 45px;
+        height: 50px;
+        z-index: 5;
+        position: relative;
+        border-radius: 0px 4px 4px 0px;
+        cursor: pointer;
+    }
+
+        .control .control-top:hover i {
+            color: #333333;
+        }
+
+    .control .control-bottom {
+        width: 45px;
+        height: 50px;
+        z-index: 5;
+        position: relative;
+        border-radius: 4px 0px 0px 4px;
+        left: -45px;
+        cursor: pointer;
+    }
+
+        .control .control-bottom:hover i {
+            color: #333333;
+        }
+
+
+
+/* 
+========================
+    BUTTON ONE
+========================
+*/
+.btn-one {
+    color: black;
+    transition: all 0.3s;
+    position: relative;
+}
+
+    .btn-one span {
+        transition: all 0.3s;
+    }
+
+    .btn-one::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-top-color: #727272;
+        border-bottom-color: #727272;
+        transform: scale(0.1, 1);
+    }
+
+    .btn-one:hover span {
+        letter-spacing: 2px;
+    }
+
+    .btn-one:hover::before {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    .btn-one::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s;
+    }
+
+    .btn-one:hover::after {
+        opacity: 0;
+        transform: scale(0.1, 1);
+    }
+
+.Build-sec {
+    width: 100%;
+    /* background-color: #f0f0f0; */
+}
+
+h1 {
+    font-weight: bold;
+    word-spacing: 0.5vw;
+    text-align: center;
+    font-size: 3vw;
+    font-family: "Poppins", serif;
+    padding-top: 8vw;
+}
+
+.grid-container {
+    margin-top: 1vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    background-color: #C0C0C0;
+    padding: 2vw;
+}
+
+    .grid-container > div {
+        padding: 2.5vw;
+        /* margin-bottom: 1vw; */
+        background-color: #C0C0C0;
+        font-size: 1.25vw;
+    }
+
+figure {
+    object-fit: cover;
+    width: 100%;
+    background: #C0C0C0;
+    overflow: hidden;
+}
+
+.hover08 figure img {
+    object-fit: cover;
+    height: 21vw;
+    padding-left: 5vw;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hover08 figure:hover img {
+    object-fit: cover;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.Build-sec .grid-container .button {
+    background-color: black;
+    display: inline-block;
+    border-radius: 1vw;
+    position: relative;
+}
+
+    .Build-sec .grid-container .button i {
+        float: right;
+        position: absolute;
+        top: 50%;
+        right: 2.5em;
+        color: white;
+        font-size: 1vw;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transition: all 0.3s;
+    }
+
+    .Build-sec .grid-container .button:hover i {
+        right: 1.7em;
+    }
+
+    .Build-sec .grid-container .button p {
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: center;
+        padding: 0.8em 8em 0.8em 1.3em;
+        font-size: 1vw;
+        font-weight: 600;
+    }
+
+.Build-sec2 {
+    text-align: center;
+}
+
+    .Build-sec2 p {
+        padding-top: 0.5vw;
+    }
+
+.scroll-container {
+    gap: 10px;
+    background-color: #C0C0C0;
+    padding: 2vw;
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.scroll-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.scroll-container body {
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.scroll-container .wrapper1 li {
+    height: 20vw;
+    list-style: none;
+}
+
+.scroll-container .wrapper1 {
+    margin: auto;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+
+    .scroll-container .wrapper1 i {
+        top: 45%;
+        /* height: px; */
+        width: 50px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+        z-index: 10;
+    }
+
+        .scroll-container .wrapper1 i:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+        .scroll-container .wrapper1 i:first-child {
+            left: -22px;
+        }
+
+        .scroll-container .wrapper1 i:last-child {
+            right: -22px;
+        }
+
+    .scroll-container .wrapper1 .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+.scroll-container .carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container .carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.scroll-container .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+    .scroll-container .carousel.dragging .card {
+        cursor: grab;
+        user-select: none;
+    }
+
+.scroll-container .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-container .carousel .card {
+    margin-top: 1.3vw;
+    height: 80%;
+    scroll-snap-align: center;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.scroll-container .card.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border: 4px solid #fff;
+}
+
+.scroll-container .wrapper2 {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.scroll-container .card {
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .scroll-container .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card .img {
+    width: 100%;
+    height: 0%;
+    display: block;
+}
+
+.scroll-container .info {
+    padding: 20px;
+}
+
+    .scroll-container .info h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .scroll-container .info p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        color: #666;
+    }
+
+    .scroll-container .info button {
+        padding: 10px 20px;
+        border: none;
+        background-color: black;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .scroll-container .info button:hover {
+            background-color: #0056b3;
+        }
+
+.scroll-container .wrapper2 {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.scroll-container .card {
+    width: 280px;
+    height: 360px;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+    .scroll-container .card:hover {
+        transform: translateY(20px);
+    }
+
+    .scroll-container .card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .scroll-container .card:hover:before {
+        opacity: 1;
+    }
+
+.scroll-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.scroll-container .info {
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+}
+
+.scroll-container .card:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.scroll-container .info h1 {
+    margin: 0px;
+}
+
+.scroll-container .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.scroll-container .info button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+    .scroll-container .info button:hover {
+        background: black;
+        color: white;
+    }
+
+
+
+
+.Build-sec3 {
+    text-align: center;
+}
+
+    .Build-sec3 p {
+        padding-top: 0.5vw;
+    }
+
+.scroll-container1 {
+    gap: 10px;
+    background-color: #C0C0C0;
+    padding: 2vw;
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.scroll-container1 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.scroll-container1 body {
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: transparent;
+}
+
+.scroll-container1 .wrapper3 li {
+    height: 20vw;
+    list-style: none;
+}
+
+.scroll-container1 .wrapper3 {
+    margin: auto;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+
+    .scroll-container1 .wrapper3 i {
+        top: 45%;
+        /* height: px; */
+        width: 50px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+        z-index: 10;
+    }
+
+        .scroll-container1 .wrapper3 i:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+        .scroll-container1 .wrapper3 i:first-child {
+            left: -22px;
+        }
+
+        .scroll-container1 .wrapper3 i:last-child {
+            right: -22px;
+        }
+
+    .scroll-container1 .wrapper3 .carousel1 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        border-radius: 8px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+.scroll-container1 .carousel1::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container1 .carousel1.no-transition {
+    scroll-behavior: auto;
+}
+
+.scroll-container1 .carousel1.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+    .scroll-container1 .carousel1.dragging .card1 {
+        cursor: grab;
+        user-select: none;
+    }
+
+.scroll-container1 .carousel1 :where(.card1, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-container1 .carousel1 .card1 {
+    margin-top: 1.3vw;
+    height: 80%;
+    scroll-snap-align: center;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.scroll-container1 .card1.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border: 4px solid #fff;
+}
+
+.scroll-container1 .wrapper4 {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.scroll-container1 .card1 {
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .scroll-container1 .card1:hover {
+        transform: translateY(-5px);
+    }
+
+.card1 .img {
+    width: 100%;
+    height: 0%;
+    display: block;
+}
+
+.scroll-container1 .info1 {
+    padding: 20px;
+}
+
+    .scroll-container1 .info1 h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .scroll-container1 .info1 p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        color: #666;
+    }
+
+    .scroll-container1 .info1 button {
+        padding: 10px 20px;
+        border: none;
+        background-color: black;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .scroll-container1 .info1 button:hover {
+            background-color: #0056b3;
+        }
+
+.scroll-container1 .wrapper4 {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.scroll-container1 .card1 {
+    width: 280px;
+    height: 360px;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+    .scroll-container1 .card1:hover {
+        transform: translateY(20px);
+    }
+
+    .scroll-container1 .card1:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .scroll-container1 .card1:hover:before {
+        opacity: 1;
+    }
+
+.scroll-container1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.scroll-container1 .info1 {
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+}
+
+.scroll-container1 .card1:hover .info1 {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.scroll-container1 .info1 h1 {
+    margin: 0px;
+}
+
+.scroll-container .info1 p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.scroll-container1 .info1 button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+    .scroll-container1 .info1 button:hover {
+        background: black;
+        color: white;
+    }
+
+
+
+.Build-sec4 {
+    margin-top: 5vw;
+    text-align: center;
+}
+
+    .Build-sec4 p {
+        padding-top: 0.5vw;
+    }
+
+    .Build-sec4 .video-container {
+        background-color: #C0C0C0;
+        padding: 2vw;
+    }
+
+        .Build-sec4 .video-container .watchnow {
+            padding-top: 2vw;
+        }
+
+
+@media screen and (max-width: 900px) {
+    .scroll-container .wrapper2 .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .scroll-container .wrapper2.carousel {
+        grid-auto-columns: 100%;
+    }
+}

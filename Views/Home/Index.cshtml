@@ -1,0 +1,321 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="~/wwwroot/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+
+            <div class="slideshow">
+
+                <div class="slideshow-left">
+
+                    <div class="Lslide">
+                        <div>
+                            <div class="Lslide-content">
+                                <h2>Building Beast For Who Dare’s!</h2>
+                                <p>Pre-Built PC's</p>
+
+                                <div class="button">
+                                    <a href="@Url.Action("PC", "PCLaptop")">
+                                        <p>More</p>
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Lslide">
+                        <div class="Lslide-content">
+                            <h2>Lap It Up! </h2>
+                            <p>Your Portal to Portable Power!</p>
+
+                            <div class="button">
+                                <a href="@Url.Action("Laptop", "PCLaptop")">
+                                    <p>More</p>
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Lslide">
+                        <div class="Lslide-content">
+                            <h2>Choose Your Specs Wisely!</h2>
+                            <p>Configure Your Beast.</p>
+
+                            <div class="button">
+                                <a href="@Url.Action("Index", "PCBuild")">
+                                    <p>More</p>
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slideshow-right">
+
+                    <div class="Rslide">
+                        <img src="~/wwwroot/images/PC1.jpg" alt="">
+                    </div>
+
+                    <div class="Rslide">
+                        <img src="~/wwwroot/images/PC3.jpg" alt="">
+                    </div>
+                    <div class="Rslide">
+                        <img src="~/wwwroot/images/PC5.jpg" alt="">
+                    </div>
+                </div>
+
+
+                <div class="control">
+                    <div class="oncontrol control-top">
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="oncontrol control-bottom">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="Build-sec">
+        <h1>Build Your PC</h1>
+        <div class="grid-container">
+            <div>
+                <p>Ready to craft your ultimate gaming or work machine?<br>Customize your PC with the latest and greatest components tailored to your needs. Whether you're a hardcore gamer, creative professional, or tech enthusiast, our intuitive configurator makes it easy to build the perfect PC.</p>
+                <div class="button">
+                    <a href="@Url.Action("Index", "PCBuild")">
+                        <p>More</p>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="hover08 column">
+                    <div>
+                        <figure><img src="~/wwwroot/images/IMG_20220512_221205.jpg" /></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Build-sec2">
+        <h1>Pre Built PC</h1>
+        <p>Ready To Roar Beast Available!</p>
+        <div class="scroll-container">
+            <div class="wrapper1">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <ul class="carousel">
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/Gaming_beast.png" alt="">
+                                <div class="info">
+                                    <h1>Gaming Beast</h1>
+                                    <p>Gaming Beast offers thrilling reviews and insights for gamers.</p>
+                                    <a href="PCLaptop/PCDetail?name=Gaming%20Beast&type=gaming"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/High-end_powerhouse.png" alt="">
+                                <div class="info">
+                                    <h1>High-End Powerhouse</h1>
+                                    <p>High-End Powerhouse excels in performance for serious gamers.</p>
+                                    <a href="PCLaptop/PCDetail?name=High-End%20Powerhouse&type=gaming"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/dell%20optiplex%207090.png" alt="">
+                                <div class="info">
+                                    <h1>Dell OptiPlex 7090</h1>
+                                    <p>Dell OptiPlex 7090 offers compact power for any workspace.</p>
+                                    <a href="PCLaptop/PCDetail?name=Dell%20OptiPlex%207090&type=business"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/HP%20EliteDesk%20800%20G6.png" alt="">
+                                <div class="info">
+                                    <h1>HP EliteDesk 800 G6</h1>
+                                    <p>HP EliteDesk 800 G6 packs power in a sleek design.</p>
+                                    <a href="PCLaptop/PCDetail?name=HP%20EliteDesk%20800%20G6&type=business"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/Ant%20esports.png" alt="">
+                                <div class="info">
+                                    <h1>Ant Esports Ryzen 5 Business PC</h1>
+                                    <p>
+                                        Ant Esports Ryzen 5 is business-ready.
+                                    </p>
+                                    <a href="PCLaptop/PCDetail?name=Ant%20Esports%20Ryzen%205%20Business%20PC&type=budget"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper2">
+                            <div class="card">
+                                <img src="~/wwwroot/images/PCLaptop/Acer%20Aspire%20TC-390.png" alt="">
+                                <div class="info">
+                                    <h1>Acer Aspire TC-390</h1>
+                                    <p>Acer Aspire TC-390 is ideal for everyday use.</p>
+                                    <a href="PCLaptop/PCDetail?name=Acer%20Aspire%20TC-390&type=budget"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="Build-sec3">
+        <h1>Laptop</h1>
+        <p>Ready To Roar Beast Available!</p>
+        <div class="scroll-container1">
+            <div class="wrapper3">
+                <i id="left1" class="fa-solid fa-angle-left"></i>
+                <ul class="carousel1">
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/Hp%20pavillion%20gaming.png" alt="">
+                                <div class="info1">
+                                    <h1>Hp Pavilion Gaming Laptop Ryzen 5</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=Hp%20Pavilion%20Gaming%20Laptop%20Ryzen%205&type=gaming"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/Hp%20Omen%20gaming.png" alt="">
+                                <div class="info1">
+                                    <h1>HP Omen Gaming Laptop Ryzen 7</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=HP%20Omen%20Gaming%20Laptop%20Ryzen%207&type=gaming"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/lenovo%20thinkpad%20business.png" alt="">
+                                <div class="info1">
+                                    <h1>Lenovo ThinkPad X1 Carbon</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=Lenovo%20ThinkPad%20X1%20Carbon&type=business"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/Hp_dragofly_Business.png" alt="">
+                                <div class="info1">
+                                    <h1>HP Elite Dragonfly</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=HP%20Elite%20Dragonfly&type=business"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/Lenovo%20ideapad%20budget.png" alt="">
+                                <div class="info1">
+                                    <h1>Lenovo IdeaPad 3</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=Lenovo%20IdeaPad%203&type=budget"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="wrapper4">
+                            <div class="card1">
+                                <img src="~/wwwroot/images/PCLaptop/Acer%20aspire%20budget.png" alt="">
+                                <div class="info1">
+                                    <h1>Acer Aspire 5</h1>
+                                    <p></p>
+                                    <a href="PCLaptop/LaptopDetail?name=Acer%20Aspire%205&type=budget"><button>Read More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <i id="right1" class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="Build-sec3">
+        <h1>Compare Components</h1>
+        <p>Choose Your Specs Wisely!</p>
+        <div class="Compare">
+            @Html.ActionLink("Compare", "Compare", "Home", null, new { @class = "glow-on-hover" })
+        </div>
+    </div>
+    <div class="Build-sec4">
+        <h1>Build Guide</h1>
+        <p>Tutorial to Build the Buddy!</p>
+
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/g_Im7cU8mUc?si=DMfwh3etsV36bSpG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="watchnow">
+                @Html.ActionLink("More Videos", "BuildGuide", "Home", null, new { @class = "glow-on-hover" })
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="~/wwwroot/js/index.js"></script>
+</body>
+</html>

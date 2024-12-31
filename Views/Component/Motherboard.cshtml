@@ -1,0 +1,111 @@
+﻿@model IEnumerable<BuildBuddy.Models.Motherboard>
+
+@{
+    ViewBag.Title = "Motherboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motherboard</title>
+    <link rel="stylesheet" href="~/wwwroot/css/cmp.css">
+</head>
+<body>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+    <div class="wrapper">
+
+        <div class="filter-container">
+            <h3>Filter by</h3>
+            <form method="get" action="@Url.Action("Motherboard", "Component")" id="filterForm">
+
+                <div class="filter-row">
+
+                    <div class="filter-column">
+                        <h4>Company:</h4>
+                        <div>
+                            <input type="checkbox" id="Gigabyte" name="companies" value="Gigabyte"
+                                   @(ViewBag.SelectedCompany != null && ViewBag.SelectedCompany.Contains("Gigabyte") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="Gigabyte">Gigabyte</label><br>
+                            <input type="checkbox" id="Asus" name="companies" value="Asus"
+                                   @(ViewBag.SelectedCompany != null && ViewBag.SelectedCompany.Contains("Asus") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="Asus">Asus</label><br>
+                            <input type="checkbox" id="MSI" name="companies" value="MSI"
+                                   @(ViewBag.SelectedCompany != null && ViewBag.SelectedCompany.Contains("MSI") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="MSI">MSI</label><br>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-column">
+                        <h4>Socket:</h4>
+                        <div>
+                            <input type="checkbox" id="AM4" name="sockets" value="AM4"
+                                   @(ViewBag.SelectedSockets != null && ViewBag.SelectedSockets.Contains("AM4") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="AM4">AM4</label><br>
+                            <input type="checkbox" id="AM5" name="sockets" value="AM5"
+                                   @(ViewBag.SelectedSockets != null && ViewBag.SelectedSockets.Contains("AM5") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="AM5">AM5</label><br>
+                            <input type="checkbox" id="LGA1700" name="sockets" value="LGA 1700"
+                                   @(ViewBag.SelectedSockets != null && ViewBag.SelectedSockets.Contains("LGA 1700") ? "checked" : "")
+                                   onchange="delayedSubmit()">
+                            <label for="LGA1700">LGA 1700</label><br>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+
+        <div class="details-container">
+            <div class="container">
+                @foreach (var item in Model)
+                {
+                    <div class="card">
+                        <a href="@Url.Action("Details", "Component", new { id = item.id })" class="card-link">
+                            <img src="@item.imagelink" alt="Motherboard Image">
+                            <div class="card-content">
+                                <h2 class="card-title">@Html.DisplayFor(modelItem => item.price)</h2>
+                                <div class="card-info">@Html.DisplayFor(modelItem => item.company)</div>
+                                <div class="card-info">@Html.DisplayFor(modelItem => item.model_name)</div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let timeout = null;
+        const form = document.getElementById('filterForm');
+
+        function delayedSubmit() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                form.submit();
+            }, 300); // Adjust the delay as needed (300 ms here)
+        }
+    </script>
+
+</body>
+</html>
+
+

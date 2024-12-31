@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PCBuildModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="size" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="side_panel" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="external_volume" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="internal_35_bays" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="CoolingSystem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="rpm" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="size" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="socket" Type="varchar(max)" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GraphicCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="chipset" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="memory" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="core_clock" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="boost_clock" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Memory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="speed" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="modules" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="firstword_latency" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="cas_latency" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="supported_memory_type" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="model_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="socket" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="form_factor" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="max_memory" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="memory_slots" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="supported_memory_type" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="interface_field" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PowerSupply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="efficiency" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="modular" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="model_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="core_count" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="core_clock" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="boost_clock" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="graphics" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="threads" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="socket" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="unlocked" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="capacity" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="cache" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="form_factor" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="interface_field" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="wattage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="imagelink" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PCBuildModel1StoreContainer">
+          <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoolingSystem" EntityType="Self.CoolingSystem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GraphicCard" EntityType="Self.GraphicCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Memory" EntityType="Self.Memory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerSupply" EntityType="Self.PowerSupply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processor" EntityType="Self.Processor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCBuildModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="side_panel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="external_volume" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="internal_35_bays" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CoolingSystem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rpm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="size" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GraphicCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="chipset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="memory" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="core_clock" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="boost_clock" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Memory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="speed" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modules" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstword_latency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cas_latency" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="supported_memory_type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="model_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="form_factor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="max_memory" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="memory_slots" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="supported_memory_type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="interface_field" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PowerSupply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="efficiency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="model_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="core_count" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="core_clock" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="boost_clock" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="graphics" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="threads" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unlocked" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="capacity" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cache" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="form_factor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="interface_field" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wattage" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagelink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PCBuildEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cabinets" EntityType="Self.Cabinet" />
+          <EntitySet Name="CoolingSystems" EntityType="Self.CoolingSystem" />
+          <EntitySet Name="GraphicCards" EntityType="Self.GraphicCard" />
+          <EntitySet Name="Memories" EntityType="Self.Memory" />
+          <EntitySet Name="Motherboards" EntityType="Self.Motherboard" />
+          <EntitySet Name="PowerSupplies" EntityType="Self.PowerSupply" />
+          <EntitySet Name="Processors" EntityType="Self.Processor" />
+          <EntitySet Name="Storages" EntityType="Self.Storage" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCBuildModel1StoreContainer" CdmEntityContainer="PCBuildEntities1">
+          <EntitySetMapping Name="Cabinets">
+            <EntityTypeMapping TypeName="PCBuildModel1.Cabinet">
+              <MappingFragment StoreEntitySet="Cabinet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="side_panel" ColumnName="side_panel" />
+                <ScalarProperty Name="external_volume" ColumnName="external_volume" />
+                <ScalarProperty Name="internal_35_bays" ColumnName="internal_35_bays" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoolingSystems">
+            <EntityTypeMapping TypeName="PCBuildModel1.CoolingSystem">
+              <MappingFragment StoreEntitySet="CoolingSystem">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="rpm" ColumnName="rpm" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GraphicCards">
+            <EntityTypeMapping TypeName="PCBuildModel1.GraphicCard">
+              <MappingFragment StoreEntitySet="GraphicCard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="chipset" ColumnName="chipset" />
+                <ScalarProperty Name="memory" ColumnName="memory" />
+                <ScalarProperty Name="core_clock" ColumnName="core_clock" />
+                <ScalarProperty Name="boost_clock" ColumnName="boost_clock" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memories">
+            <EntityTypeMapping TypeName="PCBuildModel1.Memory">
+              <MappingFragment StoreEntitySet="Memory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="speed" ColumnName="speed" />
+                <ScalarProperty Name="modules" ColumnName="modules" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="firstword_latency" ColumnName="firstword_latency" />
+                <ScalarProperty Name="cas_latency" ColumnName="cas_latency" />
+                <ScalarProperty Name="supported_memory_type" ColumnName="supported_memory_type" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboards">
+            <EntityTypeMapping TypeName="PCBuildModel1.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="model_name" ColumnName="model_name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="form_factor" ColumnName="form_factor" />
+                <ScalarProperty Name="max_memory" ColumnName="max_memory" />
+                <ScalarProperty Name="memory_slots" ColumnName="memory_slots" />
+                <ScalarProperty Name="supported_memory_type" ColumnName="supported_memory_type" />
+                <ScalarProperty Name="interface_field" ColumnName="interface_field" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerSupplies">
+            <EntityTypeMapping TypeName="PCBuildModel1.PowerSupply">
+              <MappingFragment StoreEntitySet="PowerSupply">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="efficiency" ColumnName="efficiency" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="modular" ColumnName="modular" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processors">
+            <EntityTypeMapping TypeName="PCBuildModel1.Processor">
+              <MappingFragment StoreEntitySet="Processor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="model_name" ColumnName="model_name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="core_count" ColumnName="core_count" />
+                <ScalarProperty Name="core_clock" ColumnName="core_clock" />
+                <ScalarProperty Name="boost_clock" ColumnName="boost_clock" />
+                <ScalarProperty Name="graphics" ColumnName="graphics" />
+                <ScalarProperty Name="threads" ColumnName="threads" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="unlocked" ColumnName="unlocked" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storages">
+            <EntityTypeMapping TypeName="PCBuildModel1.Storage">
+              <MappingFragment StoreEntitySet="Storage">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="cache" ColumnName="cache" />
+                <ScalarProperty Name="form_factor" ColumnName="form_factor" />
+                <ScalarProperty Name="interface_field" ColumnName="interface_field" />
+                <ScalarProperty Name="wattage" ColumnName="wattage" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imagelink" ColumnName="imagelink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

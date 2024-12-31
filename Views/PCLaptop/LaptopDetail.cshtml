@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = "~/Views/Account/NoLayout.cshtml";
+    ViewBag.Title = "LaptopDetail";
+    ViewBag.HideFooter = true;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #c0c0c0;
+        }
+        /* Custom styling similar to the second code block */
+        .custom-container {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+        }
+
+        .custom-wrapper {
+            background: #eaf6ff;
+            padding: 0rem;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 1.1rem;
+            font-family: sans-serif;
+        }
+
+        .custom-sessions {
+            margin-top: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        li {
+            padding-bottom: 1.5rem;
+            position: relative;
+        }
+
+            li:last-child {
+                border: 0;
+                padding-bottom: 0;
+            }
+
+        .custom-time {
+            color: #2a2839;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        p {
+            color: #4f4f4f;
+            font-family: sans-serif;
+            line-height: 1.5;
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+<body class="text-gray-900 flex items-center justify-center">
+    <div class="   w-full px-4 py-8">
+        <!-- Image + Product Details Section -->
+        <div class="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-6 h-full lg:gap-6 shadow-md mb-8">
+            <!-- 40%: Image Section -->
+            <div class="lg:w-2/5 w-full flex justify-center items-center mb-4 lg:mb-0">
+                <img id="laptop-image" src="" alt="Laptop Image" class="w-full h-auto max-h-[400px] object-contain rounded-lg transform transition-transform duration-300 hover:scale-105">
+            </div>
+
+            <!-- 60%: Product Info -->
+            <div class="lg:w-3/5 w-full mt-4 lg:mt-0">
+                <!-- Adjusted for 60% width -->
+                <h1 id="laptop-name" class="text-4xl font-bold mb-4 text-gray-800 hover:text-blue-600 transition duration-200 cursor-pointer my-10">Laptop Name</h1>
+                <p id="laptop-price" class="text-2xl text-gray-900 mb-8 font-bold">
+                    Price: <span class="text-green-600">₹0</span>
+                </p>
+
+                <h2 class="text-2xl font-semibold">Description</h2>
+                <div class="custom-container">
+                    <div class="custom-wrapper">
+                        <ul class="custom-sessions">
+                            <li>
+                                <p id="laptop-description" class="text-gray-700">This section contains detailed information about the laptop, including specifications, features, and more.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button similar to the second code block -->
+                <a id="amazonLink" href="#" target="_blank" class="mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300">
+                    Buy on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- Specifications Section: Below the Image -->
+        <div class="mt-4 p-8 bg-white rounded-lg shadow-lg">
+            <h2 class="text-4xl font-semibold mb-8 border-b-2 border-blue-600 pb-5">Specifications</h2>
+            <ul id="laptop-specs" class="list-disc list-inside text-gray-600 space-y-1 text-lg">
+                <li>Processor: <span class="font-semibold">Intel i7</span></li>
+                <li>RAM: <span class="font-semibold">16GB</span></li>
+                <li>Storage: <span class="font-semibold">512GB SSD</span></li>
+                <li>Graphics: <span class="font-semibold">NVIDIA RTX 3060</span></li>
+                <li>Screen Size: <span class="font-semibold">15.6 inches</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="module" src="~/wwwroot/js/LaptopDetail.js"></script>
+</body>
+</html>

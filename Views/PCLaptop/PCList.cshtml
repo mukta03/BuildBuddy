@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "PCList";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Built PCs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        #banner-title {
+            font-size: 3rem; /* Adjust the size as needed */
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), /* Outer glow */
+            0 0 20px rgba(255, 255, 255, 0.6), /* Inner glow */
+            0 0 30px rgba(255, 255, 255, 0.8); /* Blue hue */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #banner {
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Adjust based on your needs */
+            width: 100%;
+            text-align: center;
+            background-color: black;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow below the header */
+        }
+        /* Custom styles */
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: #c0c0c0; /* Set the default background color */
+            border-radius: 0.5rem; /* Rounded corners */
+            overflow: hidden; /* Ensures child elements do not exceed card bounds */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            padding: 1rem; /* Padding inside the card */
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            }
+    </style>
+</head>
+<body style="background-color: #FAF9F6;">
+
+    <br /><br /><br />
+
+    <section id="banner" class="h-64 w-full bg-cover bg-center">
+        <div class="flex items-center justify-center h-full bg-black bg-opacity-60">
+            <h1 id="banner-title" class="font-bold text-center mb-6">Explore Our Gaming PCs</h1>
+        </div>
+    </section>
+
+    <!-- Below Section: List of Gaming PCs -->
+    <section class="container mx-auto py-10 px-4">
+        <div id="gaming-pc-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <script type="module" src="~/wwwroot/js/PCList.js"></script>
+
+</body>
+</html>

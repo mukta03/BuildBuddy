@@ -1,0 +1,53 @@
+﻿# Ignore web.config file
+web.config
+
+
+
+x`
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+.vs/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.vssscc
+.vsscc
+
+# Uncomment if you have a "packages" directory
+#packages/
+
+# Uncomment if you are using NuGet
+#*.nupkg
+#*.snupkg
+# .nuget
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istros/
+[Dd]ebug/
+[Dd]ebugPublic/
+
+# Tye/containers files
+.tye/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+
+# Ignore bin and obj folders
+bin/
+obj/
+
+
+packages/
+properties/

@@ -1,0 +1,105 @@
+﻿
+/* Custom CSS */
+:root {
+    --color-light: #EEEEEE;
+    --color-primary: #00ADB5;
+    --color-dark: #3A4750;
+    --color-darker: #303841;
+}
+
+.bg-custom-light {
+    background-color: var(--color-light);
+}
+
+.text-custom-primary {
+    color: var(--color-primary);
+}
+
+.bg-custom-dark {
+    background-color: var(--color-dark);
+}
+
+.bg-custom-darker {
+    background-color: var(--color-darker);
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.card:hover .card-bg {
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card:hover .card-content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.section-title {
+    position: relative;
+    z-index: 10;
+    background-color: #f7fafc;
+}
+
+.section-content {
+    position: relative;
+    z-index: 5;
+    margin-top: -6rem;
+    padding-top: 12rem;
+}
+
+.bg-title-image {
+    background-image: url('/Profile/Images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

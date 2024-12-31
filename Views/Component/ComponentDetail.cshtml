@@ -1,0 +1,279 @@
+﻿
+@{
+    ViewBag.Title = "ComponentDetail";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Detail Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <style>
+        body{
+            background-color: #c0c0c0;
+        }
+        ul,
+        li {
+            list-style: disc;
+            padding-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .custom-container {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+
+        }
+
+        .custom-wrapper {
+            background: #eaf6ff;
+            padding: 0rem;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 1.1rem;
+            font-family: sans-serif;
+        }
+
+        .custom-sessions {
+            margin-top: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        li {
+            padding-bottom: 1.5rem;
+            position: relative;
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        li:last-child {
+            border: 0;
+            padding-bottom: 0;
+        }
+
+
+        .custom-time {
+            color: #2a2839;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Mobile and up */
+        @@media screen and (min-width: 601px) {
+            .custom-time {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile only */
+        @@media screen and (max-width: 600px) {
+            .custom-time {
+                margin-bottom: 0.3rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        p {
+            color: #4f4f4f;
+            font-family: sans-serif;
+            line-height: 1.5;
+            margin-top: 0.4rem;
+        }
+
+        /* Mobile only */
+        @@media screen and (max-width: 600px) {
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="relative">
+
+    <br />
+    <br />
+    <br />
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-6">
+        <!-- Section 1: Image + Product Info -->
+        <section id="productSection" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex flex-col lg:flex-row lg:gap-6">
+                <!-- 40%: Image Section -->
+                <div class="lg:w-2/5 w-full flex justify-center items-center mb-4 lg:mb-0">
+                    <img src="https://via.placeholder.com/400" alt="Component Image" class="w-full h-auto max-h-[400px] object-contain rounded-md" id="componentImageSrc">
+                </div>
+
+                <!-- 60%: Product Info -->
+                <div class="lg:w-3/5 w-full mt-20">
+                    <!-- Added margin-top here -->
+                    <h1 id="componentName" class="text-4xl font-bold mb-2"></h1>
+                    <p id="componentPrice" class="text-xl font-semibold mb-8"></p>
+
+                    <h2 class="text-2xl font-semibold mb-2">Description</h2>
+
+                    <!-- Description List with Creative Styling -->
+                    <div class="custom-container">
+                        <div class="custom-wrapper" , id="componentDescription">
+                            <ul class="custom-sessions">
+                                <li>
+                                    <div class="description-item timeline-item "></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <a id="amazonLink" href="#" target="_blank" class="mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded shadow hover:bg-blue-600 transition duration-300">
+                        Buy on Amazon
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section 2: Specification Table -->
+        <section id="specSection" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Specification</h2>
+            <div class="overflow-x-auto">
+                <table id="specificationTable" class="min-w-full table-auto border-collapse rounded-lg shadow-lg">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Specification</th>
+                            <th class="py-3 px-6 text-left">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-800 text-medium">
+                        <tr class="border-b border-gray-200 hover:bg-gray-100 transition duration-300">
+                            <td class="py-3 px-10 text-left font-medium">RAM</td>
+                            <td class="py-3 px-10 text-left">16GB DDR4</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50 border-gray-200 hover:bg-gray-100 transition duration-300">
+                            <td class="py-3 px-6 text-left font-medium">Storage</td>
+                            <td class="py-3 px-6 text-left">1TB SSD</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-100 transition duration-300">
+                            <td class="py-3 px-6 text-left font-medium">Graphics Card</td>
+                            <td class="py-3 px-6 text-left">NVIDIA RTX 3080</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-gray-100 transition duration-300">
+                            <td class="py-3 px-6 text-left font-medium">Processor</td>
+                            <td class="py-3 px-6 text-left">Intel i7-11700K</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: Price History Chart -->
+        <section id="priceSection" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Price History</h2>
+            <canvas id="priceChart" class="w-full h-64"></canvas>
+        </section>
+    </div>
+    <script type="module" src="~/wwwroot/js/ComponentDetail.js"></script>
+    <script type="module" src="~/wwwroot/js/bgAnimation.js"></script>
+    <script>
+        // GSAP ScrollTrigger for bidirectional scrolling effect
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Smooth scroll effect for the specification section
+        gsap.fromTo("#specSection", {
+            opacity: 0,
+            y: 100
+        }, {
+            opacity: 2,
+            y: 0,
+            scrollTrigger: {
+                trigger: "#specSection",
+                start: "top 100%",
+                end: "bottom 0%",
+                scrub: true,
+                toggleActions: "play reverse play reverse",
+                markers: false
+            },
+            duration: 1
+        });
+
+        // Smooth scroll effect for the price section
+        gsap.fromTo("#priceSection", {
+            opacity: 0,
+            y: 100
+        }, {
+            opacity: 3,
+            y: 0,
+            scrollTrigger: {
+                trigger: "#priceSection",
+                start: "top 100%",
+                end: "bottom 0%",
+                scrub: true,
+                toggleActions: "play reverse play reverse",
+                markers: false
+            },
+            duration: 1
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            // GSAP Animation for description list
+            gsap.fromTo(".custom-description-list-item", {
+                opacity: 0,
+                y: 20,
+            }, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.6,
+                scrollTrigger: {
+                    trigger: ".custom-container",
+                    start: "top center",
+                    toggleActions: "play none none reverse",
+                },
+            });
+
+            // Chart.js Price History Chart
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+                    datasets: [{
+                        label: 'Price',
+                        data: [299.99, 289.99, 279.99, 269.99, 259.99],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Price ($)',
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time (Weeks)',
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

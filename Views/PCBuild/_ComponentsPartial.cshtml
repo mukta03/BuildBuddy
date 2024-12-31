@@ -1,0 +1,77 @@
+﻿@model IEnumerable<dynamic>
+@{
+    var componentType = ViewData["ComponentType"] as string; // Cast to string
+    var remainingComponents = ViewData["RemainingComponents"] as IEnumerable<dynamic>;
+}
+
+<link rel="stylesheet" href="~/wwwroot/css/PCBuild.css">
+
+
+<div class="component-selection-container">
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="text-align: left;">Component</th>
+                <th style="text-align: left;">Price</th>
+                <th>
+                    <button id="closeComponentList" style="margin-left: 10px; border: none; background-color: transparent !important; cursor: pointer; color: red; font-size: 20px; padding: 0; outline: none;">✖</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @((componentType == "cpu" || componentType == "motherboard") ? item.model_name : item.name)
+                    </td>
+                    <td>
+                        ₹@item.price
+                    </td>
+                    <td>
+                        <a href="#" class="select-item"
+                           style="display: block; padding: 5px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; background-color: #f8f9fa; color: #333; transition: background-color 0.3s;"
+                           data-name="@((componentType == "cpu" || componentType == "motherboard") ? item.model_name : item.name)"
+                           data-type="@componentType"
+                           data-price="@item.price"
+                           @if (componentType != "cabinet") { @: data-wattage="@item.wattage"
+                           }
+                           @if (componentType == "cpu" || componentType == "motherboard" || componentType == "coolingSystem") { @: data-socket="@item.socket"
+                           }
+                           @if (componentType == "memory" || componentType == "motherboard") { @: data-supportedmemorytype="@item.supported_memory_type"
+                           }
+                           @if (componentType == "storage" || componentType == "motherboard") { @: data-interface="@item.interface_field"
+                           }
+                           @if (componentType == "cabinet" || componentType == "coolingSystem") { @: data-size="@item.size"
+                            }
+                           @if (componentType == "motherboard") { @: data-form_factor="@item.form_factor"
+                            }
+                           @if (componentType == "cabinet") { @: data-cabinettype="@item.type"
+                           }
+                           >
+                            Select
+                        </a>
+                    </td>
+                </tr>
+            }
+
+            @if (remainingComponents != null && remainingComponents.Any())
+            {
+                foreach (var item in remainingComponents)
+                {
+                    <tr>
+                        <td>
+                            @((componentType == "cpu" || componentType == "motherboard") ? item.model_name : item.name)
+                        </td>
+                        <td>
+                            ₹@item.price
+                        </td>
+                        <td>
+                            <span style="color: #721c24; font-weight: bold;">Incompatible</span>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

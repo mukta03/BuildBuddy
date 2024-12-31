@@ -1,0 +1,181 @@
+﻿.filter-row {
+    display: flex; /* Use flexbox for layout */
+}
+
+.filter-column {
+    flex: 1; /* Equal width for both columns */
+    padding-right: 10px; /* Space between columns */
+}
+
+    .filter-column:last-child {
+        padding-right: 0; /* Remove padding from the last column */
+    }
+
+
+
+
+
+body {
+    font-family: sans-serif;
+    display: flex; /* Ensure to use flex for main content */
+    flex-direction: column; /* Stack vertically */
+    height: 100%; /* Ensure it takes the full height */
+}
+
+.filter-container {
+    width: 250px; /* Adjust as needed */
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.details-container {
+    flex: 1; /* Take the remaining space */
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: auto; /* Allow scrolling if content overflows */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add padding around the container */
+}
+
+h3, h4 {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.wrapper {
+    flex-direction: column;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex; /* Use flexbox for the main content area */
+    flex: 1; /* Take available space */
+}
+
+
+
+
+
+
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: center; /* Center cards in the container */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px; /* Set a max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    background-color: #f0f0f0; /* Light gray color for the card */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Ensure no overflow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+    flex: 0 1 calc(20% - 20px); /* Each card takes up about a third of the container, minus gap */
+    max-width: 300px; /* Define maximum width */
+    min-width: 250px; /* Set a minimum width */
+    text-decoration: none; /* Remove underline from anchor */
+    color: inherit; /* Inherit color from parent for text */
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+
+.card-link {
+    display: flex; /* Flexbox for card content */
+    flex-direction: column; /* Stack items vertically */
+    height: 100%; /* Ensure anchor fills the card */
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Maintain text color */
+}
+
+.card-title,
+.card-info {
+    text-decoration: none; /* Ensure no underline for these text elements */
+}
+
+
+    .card img {
+        width: 100%; /* Responsive image */
+        height: 150px; /* Fixed height for images */
+        object-fit: cover; /* Cover aspect ratio */
+    }
+
+.card-content {
+    padding: 15px; /* Padding inside the card */
+}
+
+.card-title {
+    font-size: 1.5em; /* Title size */
+    font-weight: bold; /* Bold title */
+    color: #333; /* Darker color for title */
+    margin: 0; /* Remove default margin */
+}
+
+.card-info {
+    font-size: 1em; /* Info text size */
+    color: #666; /* Lighter color for info */
+    margin-top: 5px; /* Space between info lines */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        flex: 0 1 calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 1 calc(100% - 20px); /* Full width on small screens */
+    }
+}
+
+
+
+
+.checkbox-container {
+    margin-right: 10px; /* Space between checkbox and card content */
+}
+
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+}
+
+/* Optional: Customize checkbox appearance */
+.checkbox-container label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+    background-color: #4CAF50; /* Change color when checked */
+    border-color: #4CAF50; /* Change border color when checked */
+}
+
+    .checkbox-container input[type="checkbox"]:checked + label::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        width: 8px;
+        height: 16px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }

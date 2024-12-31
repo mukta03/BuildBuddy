@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "LaptopList";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #banner-title {
+            font-size: 3rem; /* Adjust the size as needed */
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* Outer glow */
+            0 0 20px rgba(255, 255, 255, 0.6), /* Inner glow */
+            0 0 30px rgba(255, 255, 255, 0.8); /* Blue hue */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #banner {
+            text-align: center;
+            background-color: black;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow below the header */
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamic grid layout */
+            gap: 1.5rem; /* Spacing between items */
+        }
+
+        .product-card {
+            background-color: #c0c0c0; /* Set the default background color */
+            border-radius: 0.5rem; /* Rounded corners */
+            overflow: hidden; /* Ensures child elements do not exceed card bounds */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            padding: 1rem; /* Padding inside the card */
+        }
+
+            .product-card:hover {
+                background-color: #999999; /* Change color on hover */
+            }
+    </style>
+</head>
+<body class="text-white">
+
+    <br /><br /><br />
+
+    <!-- Header Section: Banner Image -->
+    <header id="banner" class="bg-cover bg-center h-64">
+        <div class="flex items-center justify-center h-full bg-black bg-opacity-60">
+            <h1 id="banner-title">Top Laptops</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="flex flex-wrap -mx-4 justify-center mt-10">
+            <div class="w-full">
+                <div id="laptop-list" class="product-list">
+                    <!-- Laptop items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="~/wwwroot/js/LaptopList.js"></script>
+</body>
+</html>

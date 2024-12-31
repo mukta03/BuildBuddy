@@ -1,0 +1,360 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/wwwroot/css/PCBuild.css">
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+<div class="container">
+
+
+    <!-- Progress bar for Max Price -->
+    <!--<div class="progress-container" style="margin-top: 20px;">
+        <label for="maxPrice">Set Max Price (₹): </label>
+        <input type="range" id="maxPrice" min="0" max="100000" value="50000" step="1000" />
+        <span id="maxPriceValue">₹50,000</span>
+        <br />
+        <div id="priceErrorMessage" style="color: red; font-weight: bold; margin-top: 10px;"></div>
+    </div>-->
+
+
+
+
+
+
+
+    <div id="summaryContainer" style="text-align: center; margin-bottom: 20px;">
+        <h3>Total Price: <span id="totalPrice">₹0.00</span></h3>
+        <h3>Estimated Wattage: <span id="totalWattage">0</span></h3>
+    </div>
+
+
+    <h2>Select Components</h2>
+
+    <div id="selectionResult" style="margin-top: 20px;">
+
+
+        <div>
+            <button class="select-component" data-component="motherboard">Select a Motherboard</button>
+            <div class="component-list" id="motherboardListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedMotherboardContainer" class="selected-component-container"><strong>Selected Motherboard:</strong> <span id="selectedMotherboard"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="cpu">Select a CPU</button>
+            <div class="component-list" id="cpuListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedCpuContainer" class="selected-component-container"><strong> Selected CPU:</strong> <span id="selectedCpu"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="memory">Select Memory</button>
+            <div class="component-list" id="memoryListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedMemoryContainer" class="selected-component-container"><strong>Selected Memory:</strong> <span id="selectedMemory"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="storage">Select Storage</button>
+            <div class="component-list" id="storageListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedStorageContainer" class="selected-component-container"><strong>Selected Storage:</strong> <span id="selectedStorage"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="graphicsCard">Select Graphics Card</button>
+            <div class="component-list" id="graphicsCardListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedGraphicsCardContainer" class="selected-component-container"><strong>Selected Graphics Card:</strong> <span id="selectedGraphicsCard"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="coolingSystem">Select Cooling System</button>
+            <div class="component-list" id="coolingSystemListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedCoolingSystemContainer" class="selected-component-container"><strong>Selected Cooling System:</strong> <span id="selectedCoolingSystem"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="powerSupply">Select Power Supply</button>
+            <div class="component-list" id="powerSupplyListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedPowerSupplyContainer" class="selected-component-container"><strong>Selected Power Supply:</strong> <span id="selectedPowerSupply"></span></div>
+        </div>
+
+        <br />
+
+        <div>
+            <button class="select-component" data-component="cabinet">Select Cabinet</button>
+            <div class="component-list" id="cabinetListContainer" style="margin-top: 10px;"></div>
+            <div id="selectedCabinetContainer" class="selected-component-container"><strong>Selected Cabinet:</strong> <span id="selectedCabinet"></span></div>
+        </div>
+    </div>
+
+    <br />
+
+    <button id="saveBuildButton" class="bookmarkBtn">
+        <span class="IconContainer">
+            <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+                <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"></path>
+            </svg>
+        </span>
+        <p class="text">Save Build</p>
+    </button>
+    <div id="saveMessage" style="text-align: center; margin-top: 10px;"></div>
+
+
+
+</div>
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+        $('#saveBuildButton').click(function () {
+            var selectedMotherboard = $('#selectedMotherboard').text();
+            var selectedCpu = $('#selectedCpu').text();
+            var selectedMemory = $('#selectedMemory').text();
+            var selectedStorage = $('#selectedStorage').text();
+            var selectedGraphicsCard = $('#selectedGraphicsCard').text();
+            var selectedCoolingSystem = $('#selectedCoolingSystem').text();
+            var selectedPowerSupply = $('#selectedPowerSupply').text();
+            var selectedCabinet = $('#selectedCabinet').text();
+            var totalPrice = $('#totalPrice').text();
+            var totalWattage = $('#totalWattage').text();
+
+            $.ajax({
+                url: '@Url.Action("SaveBuild", "Account")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    Motherboard: selectedMotherboard,
+                    Processor: selectedCpu,
+                    Memory: selectedMemory,
+                    Storage: selectedStorage,
+                    GraphicsCard: selectedGraphicsCard,
+                    CoolingSystem: selectedCoolingSystem,
+                    PowerSupply: selectedPowerSupply,
+                    Cabinet: selectedCabinet,
+                    TotalPrice: parseFloat(totalPrice.replace('₹', '').replace(',', '')),
+                    TotalWattage: parseInt(totalWattage)
+                }),
+                success: function (response) {
+                    $('#saveMessage').text(response.message);
+                },
+                error: function (xhr, status, error) {
+                    $('#saveMessage').text("An error occurred: " + xhr.responseText);
+                }
+            });
+        });
+    });
+
+
+
+
+
+        $(document).ready(function() {
+            let totalPrice = 0;
+            let totalWattage = 0;
+
+            let selectedComponents = {
+                motherboard: null,
+                cpu: null,
+                memory: null,
+                storage: null,
+                graphiccard: null,
+                powersupply: null,
+                cabinet: null,
+                coolingSystem: null
+            };
+
+            // Handle component selection
+            $('.select-component').click(function () {
+                const componentType = $(this).data('component');
+
+                // Hide all component lists first
+                $('.component-list').hide();
+
+                // Prepare request parameters
+                let requestParams = { type: componentType };
+
+                // Add motherboard socket if selecting CPU
+                if (componentType === 'cpu') {
+                    if (selectedComponents.motherboard) {
+                        requestParams.motherboardSocket = selectedComponents.motherboard.socket;
+                    }
+                    if (selectedComponents.coolingSystem) {
+                        requestParams.coolingsystemSocket = selectedComponents.coolingSystem.socket;
+                    }
+                }
+
+                // Add supported_memory_type if selecting Memory
+                if (componentType === 'memory' && selectedComponents.motherboard) {
+                    requestParams.memoryType = selectedComponents.motherboard.supported_memory_type;
+                }
+
+                // Add motherboard interface if selecting Storage
+                if (componentType === 'storage' && selectedComponents.motherboard) {
+                    requestParams.motherboardInterface = selectedComponents.motherboard.interface_field;
+                }
+
+                // Add motherboard socket and CPU socket if selecting Cooling System
+                if (componentType === 'coolingSystem') {
+                    if (selectedComponents.motherboard) {
+                        requestParams.motherboardSocket = selectedComponents.motherboard.socket;
+                    }
+                    if (selectedComponents.cpu) {
+                        requestParams.cpuSocket = selectedComponents.cpu.socket;
+                    }
+                    if (selectedComponents.cabinet) {
+                        requestParams.cabinetSize = selectedComponents.cabinet.size;
+                    }
+                }
+
+                // Add cpu socket supported_memory_type if selecting Motherboard
+                if (componentType === 'motherboard') {
+                    if (selectedComponents.cpu) {
+                        requestParams.cpuSocket = selectedComponents.cpu.socket;
+                    }
+                    if (selectedComponents.memory) {
+                        requestParams.memoryType = selectedComponents.memory.supported_memory_type;
+                    }
+                    if (selectedComponents.storage) {
+                        requestParams.storageInterface = selectedComponents.storage.interface_field;
+                    }
+                    if (selectedComponents.coolingSystem) {
+                        requestParams.coolingsystemSocket = selectedComponents.coolingSystem.socket;
+                    }
+                    if (selectedComponents.cabinet) {
+                        requestParams.cabinetType = selectedComponents.cabinet.cabinetType;
+                    }
+
+                }
+
+                if (componentType === 'cabinet') {
+                    if (selectedComponents.coolingSystem) {
+                        requestParams.coolingSystemSize = selectedComponents.coolingSystem.size;
+                    }
+                    if (selectedComponents.motherboard) {
+                        requestParams.formFactor = selectedComponents.motherboard.form_factor; // Add form factor to request
+                    }
+                }
+
+                // Fetch components based on the type
+                $.get('@Url.Action("GetComponents", "PCBuild")', requestParams, function(data) {
+                    $('#' + componentType + 'ListContainer').html(data).show();
+                });
+
+            });
+
+            // Handle item selection from the list
+            $(document).on('click', '.select-item', function(e) {
+                e.preventDefault();
+                const componentName = $(this).data('name');
+                const componentType = $(this).data('type');
+                const componentPrice = parseFloat($(this).data('price'));
+                const componentWattage = $(this).data('wattage') ? parseFloat($(this).data('wattage')) : 0;
+
+                // Update selected components
+                if (selectedComponents[componentType]) {
+                    // Deduct previous component price and wattage if it exists
+                    totalPrice -= selectedComponents[componentType].price;
+
+                    if (componentType !== 'powerSupply') {
+                        totalWattage -= selectedComponents[componentType].wattage || 0; // Ensure to not deduct undefined wattage
+                    }
+                }
+
+                // Set the new selected component
+                selectedComponents[componentType] = {
+                    name: componentName,
+                    price: componentPrice,
+                    wattage: componentWattage,
+                    socket: $(this).data('socket'),
+                    supported_memory_type: $(this).data('supportedmemorytype'),
+                    interface_field: $(this).data('interface'),
+                    size: $(this).data('size'),
+                    form_factor: $(this).data('form_factor'),
+                    cabinetType: $(this).data('cabinettype')
+                };
+
+
+                // Update total price and wattage
+                totalPrice += componentPrice;
+
+                if (componentType !== 'powerSupply') {
+                    totalWattage += componentWattage;
+                }
+
+                // Update the selected component display
+                $('#selected' + capitalizeFirstLetter(componentType)).text(componentName);
+
+                // Update total price display
+                $('#totalPrice').text('₹' + totalPrice.toFixed(2)); // Update total price with 2 decimal places
+
+                $('#totalWattage').text(totalWattage);
+
+
+                //// Update the error message based on the new total price
+                //updateErrorMessage(totalPrice);
+
+                //// Handle max price slider change
+                //$('#maxPrice').on('input', function () {
+                //    let maxPrice = parseFloat($(this).val());
+                //    $('#maxPriceValue').text('₹' + maxPrice.toLocaleString());
+                //    updateProgressBar(maxPrice);
+
+                //    // Update the error message when max price is adjusted
+                //    updateErrorMessage(totalPrice);
+                //});
+
+                //function updateProgressBar(maxPrice) {
+                //    // Update the progress bar's max value and value
+                //    $('#priceProgress').attr('max', maxPrice);
+                //    $('#priceProgress').val(maxPrice);
+                //}
+
+                //function updateErrorMessage(totalPrice) {
+                //    let maxPrice = parseFloat($('#maxPrice').val());
+
+                //    // Check if total price exceeds max price
+                //    if (totalPrice > maxPrice) {
+                //        $('#priceErrorMessage').text('Total price exceeds maximum allowed price!');
+                //    } else {
+                //        $('#priceErrorMessage').text('');
+                //    }
+                //}
+
+
+                // Clear the list after selection
+                $('#' + componentType + 'ListContainer').empty();
+            });
+
+            // Close the component list when the close button is clicked
+            $(document).on('click', '#closeComponentList', function () {
+                $(this).closest('.component-selection-container').hide();
+            });
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        });
+    </script>
+}

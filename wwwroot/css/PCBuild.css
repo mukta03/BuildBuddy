@@ -1,0 +1,171 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#summaryContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    #summaryContainer h3 {
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        margin: 10px 0;
+    }
+
+        #summaryContainer h3 span {
+            font-weight: bold;
+            color: #2c3e50; /* Darker color for emphasis */
+        }
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+button.select-component {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+button.select-component {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+button.select-component {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+
+
+.component-list {
+    margin-top: 10px;
+}
+
+.selected-component-container {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+    .selected-component-container span {
+        color: #333;
+    }
+
+    .selected-component-container strong {
+        color: #555;
+    }
+
+.bookmarkBtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.349);
+    background-color: rgb(12, 12, 12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+}
+
+.IconContainer {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: 0.3s;
+}
+
+.icon {
+    border-radius: 1px;
+}
+
+.text {
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    transition-duration: 0.3s;
+    font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+    width: 90px;
+    transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+    transform: translate(10px);
+    width: 0;
+    font-size: 0;
+    transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+    transform: scale(0.95);
+    transition-duration: 0.3s;
+}

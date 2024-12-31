@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "Component";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+
+        /* Custom CSS */
+        :root {
+            --color-light: #ffffff;
+            --color-primary: #00ADB5;
+            --color-dark: #000000;
+            --color-darker: #303841;
+        }
+        .bg-custom-light {background-color: var(--color-light); }
+        .bg-custom-primary { background-color: var(--color-primary); }
+        .text-custom-dark { color: var(--color-dark); }
+        .bg-custom-dark { background-color: var(--color-darker); }
+
+
+        /* Floating Header section */
+        .header {
+            background-size: cover;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.329);
+            background-position: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Push content below the header */
+        .main-section {
+            background-color: #d1d1d1;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Filter section */
+        #filter-section {
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 1.3rem;
+            margin-bottom: 1.3rem;
+            background-color: white;
+            padding: 1.5rem;
+            width: 20%;
+        }
+
+        /* Main content section */
+        .content {
+            /* background-color: #c0c0c0; */
+            padding: 1.5rem;
+            /* padding-left: 1.5rem;
+            padding-bottom: 1.5rem;
+            padding-right: 1.5rem; */
+            width: 100%;
+        }
+
+        /* E-commerce card design */
+        .component-card {
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        .component-image {
+            transition: transform 0.3s ease;
+        }
+        .component-card:hover .component-image {
+            transform: scale(1.05);
+        }
+
+
+        /* Responsive adjustments */
+        @@media (max-width: 1024px) {
+            .main-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            #filter-section {
+                width: 100%;
+                border-radius: 0;
+                margin-bottom: 20px;
+            }
+            .content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-custom-light">
+
+    <br />
+    <br />
+    <br />
+
+    <!-- Floating Header Section with Background Image -->
+    <header class="header">
+    </header>
+
+    <!-- Main Section: Filter and Content -->
+    <div class="main-section">
+        <!-- Filter Section on the Left -->
+        <div id="filter-section">
+            <div class="mb-4">
+                <h1 class="text-2xl font-bold">Shop By</h1>
+                <h3 class="text-lg font-medium text-custom-dark">Price Range</h3>
+                <input type="range" id="price-range" min="0" max="200000" value="200000" class="w-full mt-2" />
+                <div class="flex justify-between mt-2">
+                    <span id="min-price">0</span>
+                    <span id="max-price">300000</span>
+                </div>
+            </div>
+            <div class="mb-4" id="category-filter">
+                <ul id="category-list"></ul>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content">
+            <!-- Component Grid -->
+            <div id="component-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Dynamic component items will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="~/wwwroot/js/componentList.js"></script>
+    <script type="module" src="~/wwwroot/js/gsapEffects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "ComparePage";
+}
+
+<br /><br />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PC Comparison</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 py-10">
+
+
+    <div class="container mx-auto">
+        <!-- Main Title -->
+        <h1 class="text-3xl font-bold text-center mb-10">
+            Compare Custom PC Components
+        </h1>
+
+        <!-- Comparison Section -->
+        <div id="comparison-section"
+             class="flex flex-wrap gap-4 justify-center mb-8">
+            <!-- Component Column -->
+            <div class="comparison-column relative flex flex-col items-center p-4 bg-white shadow-lg rounded-lg w-full md:w-1/2 lg:w-1/4">
+                <!-- Remove Button -->
+                <button class="remove-column absolute top-2 right-2 w-8 h-8 rounded-full bg-red-500 text-white text-lg flex items-center justify-center">
+                    <!-- SVG icon for the close button -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <!-- Product Dropdown -->
+                <select class="product-dropdown p-2 border border-gray-300 rounded w-full mt-10">
+                    <option value="" disabled selected>Select Product</option>
+                    <!-- Options will be dynamically populated via JS -->
+                </select>
+                <!-- Component Details (Hidden initially) -->
+                <div class="component-details mt-4 p-2 border border-gray-300 rounded w-full hidden">
+                    <div class="flex justify-center mb-2">
+                        <img src="" alt="Product Image" class="w-48 h-48 object-cover" id="component-image">
+                    </div>
+                    <h1 id="component-name" class="text-xl font-bold mb-2"></h1>
+                    <h2 id="component-price" class="text-lg font-semibold mt-2"></h2>
+                    <!-- Specification Table -->
+                    <table class="w-full border-collapse border mt-2">
+                        <tbody id="component-specifications" class="w-full">
+                            <!-- Dynamic rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Repeatable Structure for another Component Column -->
+            <div class="comparison-column relative flex flex-col items-center p-4 bg-white shadow-lg rounded-lg w-full md:w-1/2 lg:w-1/4">
+                <!-- Remove Button -->
+                <button class="remove-column absolute top-2 right-2 w-8 h-8 rounded-full bg-red-500 text-white text-lg flex items-center justify-center">
+                    <!-- SVG icon for the close button -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <!-- Product Dropdown -->
+                <select class="product-dropdown p-2 border border-gray-300 rounded w-full mt-10">
+                    <option value="" disabled selected>Select Product</option>
+                </select>
+                <!-- Component Details (Hidden initially) -->
+                <div class="component-details mt-4 p-2 border border-gray-300 rounded w-full hidden">
+                    <div class="flex justify-center mb-2">
+                        <img src="" alt="Product Image" class="w-48 h-48 object-cover" id="component-image">
+                    </div>
+                    <h1 id="component-name" class="text-xl font-bold mb-2"></h1>
+                    <h2 id="component-price" class="text-lg font-semibold mt-2"></h2>
+                    <!-- Price element below component name -->
+                    <!-- Specification Table -->
+                    <table class="w-full border-collapse border mt-2">
+                        <tbody id="component-specifications" class="w-full">
+                            <!-- Dynamic rows will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add New Comparison Button -->
+            <div id="add-comparison-container"
+                 class="flex items-center justify-center">
+                <button id="add-comparison"
+                        class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white text-2xl font-bold hover:bg-blue-600 focus:outline-none">
+                    <!-- SVG icon for "+" -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Notification Popup -->
+        <div id="notification"
+             class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white p-6 rounded shadow-lg">
+                <p id="notification-text" class="text-gray-800 text-lg"></p>
+                <button id="close-notification"
+                        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="~/wwwroot/js/cmppage.js"></script>
+</body>
+</html>

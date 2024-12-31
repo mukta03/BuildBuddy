@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PCBuildModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SavedBuilds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Motherboard" Type="varchar" MaxLength="100" />
+          <Property Name="Processor" Type="varchar" MaxLength="100" />
+          <Property Name="Memory" Type="varchar" MaxLength="100" />
+          <Property Name="Storage" Type="varchar" MaxLength="100" />
+          <Property Name="GraphicsCard" Type="varchar" MaxLength="100" />
+          <Property Name="CoolingSystem" Type="varchar" MaxLength="100" />
+          <Property Name="PowerSupply" Type="varchar" MaxLength="100" />
+          <Property Name="Cabinet" Type="varchar" MaxLength="100" />
+          <Property Name="TotalPrice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TotalWattage" Type="int" />
+        </EntityType>
+        <EntityContainer Name="PCBuildModel3StoreContainer">
+          <EntitySet Name="SavedBuilds" EntityType="Self.SavedBuilds" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCBuildModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SavedBuild">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Motherboard" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Processor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Memory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Storage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GraphicsCard" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CoolingSystem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PowerSupply" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cabinet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TotalWattage" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="PCBuildEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SavedBuilds" EntityType="Self.SavedBuild" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCBuildModel3StoreContainer" CdmEntityContainer="PCBuildEntities3">
+          <EntitySetMapping Name="SavedBuilds">
+            <EntityTypeMapping TypeName="PCBuildModel3.SavedBuild">
+              <MappingFragment StoreEntitySet="SavedBuilds">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Motherboard" ColumnName="Motherboard" />
+                <ScalarProperty Name="Processor" ColumnName="Processor" />
+                <ScalarProperty Name="Memory" ColumnName="Memory" />
+                <ScalarProperty Name="Storage" ColumnName="Storage" />
+                <ScalarProperty Name="GraphicsCard" ColumnName="GraphicsCard" />
+                <ScalarProperty Name="CoolingSystem" ColumnName="CoolingSystem" />
+                <ScalarProperty Name="PowerSupply" ColumnName="PowerSupply" />
+                <ScalarProperty Name="Cabinet" ColumnName="Cabinet" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="TotalWattage" ColumnName="TotalWattage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

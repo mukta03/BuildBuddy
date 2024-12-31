@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "PC";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    /* Header styles */
+    .header {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url("/wwwroot/images/PCLaptop/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Added shadow below the header */
+    }
+
+    .header-title {
+      font-size: clamp(24px, 5vw, 48px);
+      white-space: nowrap;
+      line-height: 1.2;
+      color: #f0f0f0;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .header-subtitle {
+      font-size: clamp(14px, 3vw, 20px);
+    }
+
+    /* Button hover effect */
+    .explore-btn {
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .explore-btn:hover {
+      background-color: #FFC107; /* Original yellow color */
+      color: #000; /* Text color changes to black */
+      transform: translateY(-3px); /* Subtle lift effect */
+    }
+
+    @@media (max-width: 768px) {
+      .header {
+        height: 200px;
+      }
+    }
+
+    /* Updated card styles */
+    .category-card {
+      background-color: #C0C0C0; /* Same as pre-built PC page */
+    }
+
+    .category-card:hover {
+      background-color: #999999; /* Darker shade on hover */
+    }
+
+    .text-gray-300 {
+      color: #d1d5db; /* Match gray text color from pre-built PC page */
+    }
+
+    .text-gray-700 {
+      color: #000000; /* Match gray description text */
+    }
+
+    .explore-btn {
+      background-color: #fff;
+      color: #000;
+    }
+    </style>
+</head>
+<body style="background-color: #FAF9F6;">
+
+    <br /><br /><br />
+
+    <!-- Header -->
+    <header class="header p-8">
+        <h1 class="header-title font-bold">Explore Your Perfect PC's</h1>
+        <p class="header-subtitle text-gray-400 mt-4">Choose from Gaming, Business, or Budget PC's'</p>
+    </header>
+
+    <!-- Laptop Categories -->
+    <section class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+        <!-- Gaming Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Gaming_PC_Cover.png" alt="Gaming Laptop" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 class="text-2xl font-semibold">Gaming PCs</h2>
+                <p class="text-gray-700 mt-2 flex-grow">High-performance gaming PCs built to handle the latest games at maximum settings. Equipped with top-tier processors and graphics cards, these PCs ensure a smooth and immersive gaming experience.</p>
+                @Html.ActionLink("Explore", "PCList", "PCLaptop", new { type = "gaming" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+
+        <!-- Business Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Business_PC_Cover.png" alt="Business PC" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 class="text-2xl font-semibold">Business PCs</h2>
+                <p class="text-gray-700 mt-2 flex-grow">Reliable and efficient pre-built PCs tailored for business needs. Featuring powerful processors, ample storage, and excellent multitasking capabilities, these systems keep your workflow smooth and secure.</p>
+                @Html.ActionLink("Explore", "PCList", "PCLaptop", new { type = "business" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+
+        <!-- Budget Laptop Card -->
+        <div class="category-card relative rounded-lg shadow-lg transition duration-300 flex flex-col">
+            <img src="~/wwwroot/images/PCLaptop/Budget_PC_Cover.png" alt="Budget PC" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6 flex flex-col flex-grow">
+                <h2 class="text-2xl font-semibold">Budget PCs</h2>
+                <p class="text-gray-700 mt-2 flex-grow">Affordable pre-built PCs that cater to everyday computing needs. Perfect for students and home users, these PCs offer decent performance for web browsing, office tasks, and media consumption.</p>
+                @Html.ActionLink("Explore", "PCList", "PCLaptop", new { type = "budget" }, new { @class = "explore-btn mt-4 px-4 py-2 bg-white text-black rounded" })
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

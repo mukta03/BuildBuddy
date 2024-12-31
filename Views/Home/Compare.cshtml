@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BuildBuddy.Models.CompareList>
+@{
+    ViewBag.Title = "Compare";
+}
+
+<br />
+<br />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/wwwroot/css/comparecomponent.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+</head>
+<body class="bg-custom-darker text-custom-light">
+    <!-- Section for Title with GSAP Animation -->
+    <section class="w-full py-12 bg-custom-light section-title" id="animated-section">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-6xl font-bold text-custom-dark mb-4" id="title">Compare Components</h1>
+            <p class="text-xl text-custom-dark" id="description">
+                Confused which to choose?!<br>
+                Compare the products by selecting the component.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section with Glassmorphism Effect -->
+    <section class="w-full pt-0 py-12 md:py-24 lg:py-32 section-content">
+        <div class="container mx-auto px-4 md:px-6">
+            <div id="cards-container" class="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+
+                    @foreach (var component in Model)
+                    {
+                        <div class="card flex flex-col items-center gap-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 bg-custom-light overflow-hidden">
+
+
+                            <div class="card-bg w-full h-48 bg-center bg-cover" style="background-image: url('@component.Image');"></div>
+                            <div class="card-content p-4 flex flex-col justify-between items-center text-center text-custom-dark sm:flex hidden">
+                                <h3 class="text-xl font-semibold">@component.Name</h3>
+                                <p class="text-sm">
+                                    @component.Description
+                                    @Html.ActionLink("Compare →", "ComparePage", "Home", new { type=@component.URLName }, new { @class = "text-custom-primary hover:underline compare-link" })
+
+                                </p>
+                            </div>
+
+
+                        </div>
+                    }
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <script type="module" src="~/wwwroot/js/gsap.js"></script>
+</body>
+</html>
